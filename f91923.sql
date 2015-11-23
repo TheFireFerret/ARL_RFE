@@ -27,7 +27,7 @@ prompt APPLICATION 91923 - F15B1 ARL RFE Application
 -- Application Export:
 --   Application:     91923
 --   Name:            F15B1 ARL RFE Application
---   Date and Time:   02:37 Monday November 23, 2015
+--   Date and Time:   18:47 Monday November 23, 2015
 --   Exported By:     RACHELYCHOI@UTEXAS.EDU
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -36,12 +36,12 @@ prompt APPLICATION 91923 - F15B1 ARL RFE Application
 --
 
 -- Application Statistics:
---   Pages:                     30
---     Items:                  142
+--   Pages:                     32
+--     Items:                  144
 --     Processes:               82
---     Regions:                 85
+--     Regions:                 87
 --     Buttons:                 97
---     Dynamic Actions:         81
+--     Dynamic Actions:         80
 --   Shared Components:
 --     Logic:
 --     Navigation:
@@ -111,7 +111,7 @@ wwv_flow_api.create_flow(
 ,p_csv_encoding=>'Y'
 ,p_auto_time_zone=>'Y'
 ,p_last_updated_by=>'RACHELYCHOI@UTEXAS.EDU'
-,p_last_upd_yyyymmddhh24miss=>'20151123023707'
+,p_last_upd_yyyymmddhh24miss=>'20151123183239'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -11201,7 +11201,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'D'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'RACHELYCHOI@UTEXAS.EDU'
-,p_last_upd_yyyymmddhh24miss=>'20151122230649'
+,p_last_upd_yyyymmddhh24miss=>'20151123181611'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(16852532974005926550)
@@ -11387,7 +11387,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'RACHELYCHOI@UTEXAS.EDU'
-,p_last_upd_yyyymmddhh24miss=>'20151123012821'
+,p_last_upd_yyyymmddhh24miss=>'20151123174828'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(16828196877877275846)
@@ -11490,7 +11490,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_display_order=>10
 ,p_column_identifier=>'A'
 ,p_column_label=>'Rfe id'
-,p_column_link=>'f?p=&APP_ID.:5:&SESSION.::&DEBUG.:RP:P5_RFE_ID,P0_RFE_ID:#RFE_ID#,#RFE_ID#'
+,p_column_link=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.:RP:P3_RFE_ID,P0_RFE_ID:#RFE_ID#,#RFE_ID#'
 ,p_column_linktext=>'#RFE_ID#'
 ,p_column_type=>'NUMBER'
 ,p_column_alignment=>'RIGHT'
@@ -13160,7 +13160,7 @@ wwv_flow_api.create_page(
 ,p_user_interface_id=>wwv_flow_api.id(16493082263991820879)
 ,p_name=>'RFE Detail View Only'
 ,p_page_mode=>'NORMAL'
-,p_step_title=>'RFE Detail View Only'
+,p_step_title=>'RFE Detail'
 ,p_step_sub_title=>'RFE Detail View Only'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
@@ -13170,7 +13170,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'RACHELYCHOI@UTEXAS.EDU'
-,p_last_upd_yyyymmddhh24miss=>'20151122235652'
+,p_last_upd_yyyymmddhh24miss=>'20151123182453'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(18146880729015275767)
@@ -13550,141 +13550,6 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(18146896525409275792)
-,p_plug_name=>'Documents'
-,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_api.id(16493056030376820835)
-,p_plug_display_sequence=>90
-,p_include_in_reg_disp_sel_yn=>'N'
-,p_plug_display_point=>'BODY'
-,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'select "DOC_ID", ',
-'"FILENAME",',
-'"FILE_MIMETYPE",',
-'"FILE_CHARSET",',
-'dbms_lob.getlength("FILE_BLOB") "FILE_BLOB",',
-'"FILE_COMMENTS",',
-'"TAGS",',
-'"F15B1_RFE_RFE_ID"',
-'from "#OWNER#"."F15B1_DOC" ',
-'where F15B1_RFE_RFE_ID = :P3_RFE_ID',
-''))
-,p_plug_source_type=>'NATIVE_IR'
-,p_plug_query_row_template=>1
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-);
-wwv_flow_api.create_worksheet(
- p_id=>wwv_flow_api.id(18146896915958275793)
-,p_name=>'Documents'
-,p_max_row_count=>'1000000'
-,p_max_row_count_message=>'The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query.'
-,p_no_data_found_message=>'No data found.'
-,p_show_nulls_as=>'-'
-,p_pagination_type=>'ROWS_X_TO_Y'
-,p_pagination_display_pos=>'BOTTOM_RIGHT'
-,p_report_list_mode=>'TABS'
-,p_download_formats=>'CSV:HTML:EMAIL:XLS:PDF:RTF'
-,p_detail_link_text=>'<img src="#IMAGE_PREFIX#app_ui/img/icons/apex-edit-pencil.png" class="apex-edit-pencil" alt="">'
-,p_allow_exclude_null_values=>'N'
-,p_allow_hide_extra_columns=>'N'
-,p_owner=>'SAMI'
-,p_internal_uid=>18146896915958275793
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(18146897012130275793)
-,p_db_column_name=>'DOC_ID'
-,p_display_order=>1
-,p_column_identifier=>'A'
-,p_column_label=>'Doc Id'
-,p_column_type=>'NUMBER'
-,p_display_text_as=>'HIDDEN'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(18146897434699275794)
-,p_db_column_name=>'FILENAME'
-,p_display_order=>2
-,p_column_identifier=>'B'
-,p_column_label=>'Filename'
-,p_column_type=>'STRING'
-,p_tz_dependent=>'N'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(18146897836882275794)
-,p_db_column_name=>'FILE_MIMETYPE'
-,p_display_order=>3
-,p_column_identifier=>'C'
-,p_column_label=>'File Mimetype'
-,p_column_type=>'STRING'
-,p_tz_dependent=>'N'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(18146898262846275794)
-,p_db_column_name=>'FILE_CHARSET'
-,p_display_order=>4
-,p_column_identifier=>'D'
-,p_column_label=>'File Charset'
-,p_column_type=>'STRING'
-,p_tz_dependent=>'N'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(18146898685158275795)
-,p_db_column_name=>'FILE_BLOB'
-,p_display_order=>5
-,p_column_identifier=>'E'
-,p_column_label=>'File Blob'
-,p_allow_sorting=>'N'
-,p_allow_filtering=>'N'
-,p_allow_highlighting=>'N'
-,p_allow_ctrl_breaks=>'N'
-,p_allow_aggregations=>'N'
-,p_allow_computations=>'N'
-,p_allow_charting=>'N'
-,p_allow_group_by=>'N'
-,p_allow_pivot=>'N'
-,p_column_type=>'NUMBER'
-,p_format_mask=>'DOWNLOAD:F15B1_DOC:FILE_BLOB:DOC_ID'
-,p_tz_dependent=>'N'
-,p_rpt_show_filter_lov=>'N'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(18146899001050275795)
-,p_db_column_name=>'FILE_COMMENTS'
-,p_display_order=>6
-,p_column_identifier=>'F'
-,p_column_label=>'File Comments'
-,p_column_type=>'STRING'
-,p_tz_dependent=>'N'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(18146899440133275796)
-,p_db_column_name=>'TAGS'
-,p_display_order=>7
-,p_column_identifier=>'G'
-,p_column_label=>'Tags'
-,p_column_type=>'STRING'
-,p_tz_dependent=>'N'
-);
-wwv_flow_api.create_worksheet_column(
- p_id=>wwv_flow_api.id(18146899868578275796)
-,p_db_column_name=>'F15B1_RFE_RFE_ID'
-,p_display_order=>8
-,p_column_identifier=>'H'
-,p_column_label=>'F15b1 Rfe Rfe Id'
-,p_column_type=>'NUMBER'
-,p_display_text_as=>'HIDDEN'
-);
-wwv_flow_api.create_worksheet_rpt(
- p_id=>wwv_flow_api.id(18146900268188275797)
-,p_application_user=>'APXWS_DEFAULT'
-,p_report_seq=>10
-,p_report_alias=>'181469003'
-,p_status=>'PUBLIC'
-,p_is_default=>'Y'
-,p_display_rows=>50
-,p_report_columns=>'DOC_ID:FILENAME:FILE_MIMETYPE:FILE_CHARSET:FILE_BLOB:FILE_COMMENTS:TAGS:F15B1_RFE_RFE_ID'
-,p_flashback_enabled=>'N'
-);
-wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(18146901185692275798)
 ,p_plug_name=>'Tracking Comments'
 ,p_region_template_options=>'#DEFAULT#:i-h240:t-Region--scrollBody'
@@ -13892,6 +13757,141 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(18311434045672179995)
+,p_plug_name=>'Documents'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(16493056030376820835)
+,p_plug_display_sequence=>110
+,p_include_in_reg_disp_sel_yn=>'N'
+,p_plug_display_point=>'BODY'
+,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select "DOC_ID", ',
+'"FILENAME",',
+'"FILE_MIMETYPE",',
+'"FILE_CHARSET",',
+'dbms_lob.getlength("FILE_BLOB") "FILE_BLOB",',
+'"FILE_COMMENTS",',
+'"TAGS",',
+'"F15B1_RFE_RFE_ID"',
+'from "#OWNER#"."F15B1_DOC" ',
+'where F15B1_RFE_RFE_ID = :P3_RFE_ID',
+''))
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_row_template=>1
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(18311434370954179997)
+,p_name=>'Documents'
+,p_max_row_count=>'1000000'
+,p_max_row_count_message=>'The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query.'
+,p_no_data_found_message=>'No data found.'
+,p_show_nulls_as=>'-'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_show_detail_link=>'C'
+,p_download_formats=>'CSV:HTML:EMAIL:XLS:PDF:RTF'
+,p_detail_link=>'f?p=&APP_ID.:8:&APP_SESSION.::::P8_DOC_ID:#DOC_ID#'
+,p_detail_link_text=>'Edit'
+,p_owner=>'SAMI'
+,p_internal_uid=>18311434370954179997
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18311434488300180003)
+,p_db_column_name=>'DOC_ID'
+,p_display_order=>1
+,p_column_identifier=>'A'
+,p_column_label=>'Doc Id'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18311434803728180004)
+,p_db_column_name=>'FILENAME'
+,p_display_order=>2
+,p_column_identifier=>'B'
+,p_column_label=>'Filename'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18311435261490180004)
+,p_db_column_name=>'FILE_MIMETYPE'
+,p_display_order=>3
+,p_column_identifier=>'C'
+,p_column_label=>'File Mimetype'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18311435673777180005)
+,p_db_column_name=>'FILE_CHARSET'
+,p_display_order=>4
+,p_column_identifier=>'D'
+,p_column_label=>'File Charset'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18311436033537180005)
+,p_db_column_name=>'FILE_BLOB'
+,p_display_order=>5
+,p_column_identifier=>'E'
+,p_column_label=>'File Blob'
+,p_allow_sorting=>'N'
+,p_allow_filtering=>'N'
+,p_allow_highlighting=>'N'
+,p_allow_ctrl_breaks=>'N'
+,p_allow_aggregations=>'N'
+,p_allow_computations=>'N'
+,p_allow_charting=>'N'
+,p_allow_group_by=>'N'
+,p_allow_pivot=>'N'
+,p_column_type=>'NUMBER'
+,p_format_mask=>'DOWNLOAD:F15B1_DOC:FILE_BLOB:DOC_ID'
+,p_tz_dependent=>'N'
+,p_rpt_show_filter_lov=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18311436428233180006)
+,p_db_column_name=>'FILE_COMMENTS'
+,p_display_order=>6
+,p_column_identifier=>'F'
+,p_column_label=>'File Comments'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18311436805955180006)
+,p_db_column_name=>'TAGS'
+,p_display_order=>7
+,p_column_identifier=>'G'
+,p_column_label=>'Tags'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18311437271625180006)
+,p_db_column_name=>'F15B1_RFE_RFE_ID'
+,p_display_order=>8
+,p_column_identifier=>'H'
+,p_column_label=>'F15b1 Rfe Rfe Id'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(18311437628697180007)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'183114377'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_display_rows=>50
+,p_report_columns=>'DOC_ID:FILENAME:FILE_MIMETYPE:FILE_CHARSET:FILE_BLOB:FILE_COMMENTS:TAGS:F15B1_RFE_RFE_ID'
+,p_flashback_enabled=>'N'
+);
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(18167142128936283921)
 ,p_button_sequence=>10
@@ -13915,7 +13915,7 @@ wwv_flow_api.create_page_button(
 ,p_button_template_id=>wwv_flow_api.id(16493077053201820862)
 ,p_button_image_alt=>'History'
 ,p_button_position=>'REGION_TEMPLATE_EDIT'
-,p_button_redirect_url=>'f?p=&APP_ID.:6:&SESSION.::&DEBUG.:RP::'
+,p_button_redirect_url=>'f?p=&APP_ID.:40:&SESSION.::&DEBUG.:RP::'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(18146881545482275768)
@@ -14089,6 +14089,24 @@ wwv_flow_api.create_page_item(
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_attribute_01=>'Y'
 );
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(18306745428720054193)
+,p_name=>'P3_APPROVAL_REVIEW_DATE'
+,p_item_sequence=>100
+,p_item_plug_id=>wwv_flow_api.id(18146880729015275767)
+,p_prompt=>'Approval Review Date'
+,p_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select F15B1_RFE.APPROVAL_REVIEW_DATE as APPROVAL_REVIEW_DATE',
+' from F15B1_RFE F15B1_RFE',
+' where RFE_ID = :P0_RFE_ID'))
+,p_source_type=>'QUERY'
+,p_display_as=>'NATIVE_DISPLAY_ONLY'
+,p_field_template=>wwv_flow_api.id(16493076563709820858)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'VALUE'
+,p_attribute_04=>'Y'
+);
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(18146918002367275821)
 ,p_name=>'Edit Report - Dialog Closed'
@@ -14127,26 +14145,6 @@ wwv_flow_api.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_api.id(18146901185692275798)
-,p_stop_execution_on_error=>'Y'
-);
-wwv_flow_api.create_page_da_event(
- p_id=>wwv_flow_api.id(18146923017652275826)
-,p_name=>'Edit Report - Docs Dialog Closed'
-,p_event_sequence=>10
-,p_triggering_element_type=>'REGION'
-,p_triggering_region_id=>wwv_flow_api.id(18146896525409275792)
-,p_bind_type=>'bind'
-,p_bind_event_type=>'apexafterclosedialog'
-);
-wwv_flow_api.create_page_da_action(
- p_id=>wwv_flow_api.id(18146923540465275826)
-,p_event_id=>wwv_flow_api.id(18146923017652275826)
-,p_event_result=>'TRUE'
-,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
-,p_action=>'NATIVE_REFRESH'
-,p_affected_elements_type=>'REGION'
-,p_affected_region_id=>wwv_flow_api.id(18146896525409275792)
 ,p_stop_execution_on_error=>'Y'
 );
 wwv_flow_api.create_page_da_event(
@@ -14220,17 +14218,6 @@ wwv_flow_api.create_page_da_event(
 ,p_triggering_button_id=>wwv_flow_api.id(17156246640264714768)
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'apexafterclosedialog'
-);
-wwv_flow_api.create_page_da_action(
- p_id=>wwv_flow_api.id(18146924413351275828)
-,p_event_id=>wwv_flow_api.id(18146923974866275826)
-,p_event_result=>'TRUE'
-,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
-,p_action=>'NATIVE_REFRESH'
-,p_affected_elements_type=>'REGION'
-,p_affected_region_id=>wwv_flow_api.id(18146896525409275792)
-,p_stop_execution_on_error=>'Y'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(18146928511982275831)
@@ -14703,7 +14690,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'RACHELYCHOI@UTEXAS.EDU'
-,p_last_upd_yyyymmddhh24miss=>'20151123022638'
+,p_last_upd_yyyymmddhh24miss=>'20151123183222'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(16671541250856221917)
@@ -15890,7 +15877,7 @@ wwv_flow_api.create_page_button(
 'select EMP_ID',
 '    from F15B1_EMP ',
 '    where EMP_ID = :P1_EMP',
-'    and F15B1_AUTH_AUTH_ID = 100'))
+'    and F15B1_AUTH_AUTH_ID = 2'))
 ,p_button_condition_type=>'EXISTS'
 );
 wwv_flow_api.create_page_button(
@@ -16495,35 +16482,6 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_region_id=>wwv_flow_api.id(16671541250856221917)
 );
 wwv_flow_api.create_page_da_event(
- p_id=>wwv_flow_api.id(16855630878666880311)
-,p_name=>'EDApprove RFE'
-,p_event_sequence=>80
-,p_triggering_element_type=>'BUTTON'
-,p_triggering_button_id=>wwv_flow_api.id(16855630736747880310)
-,p_bind_type=>'bind'
-,p_bind_event_type=>'click'
-);
-wwv_flow_api.create_page_da_action(
- p_id=>wwv_flow_api.id(16855630938759880312)
-,p_event_id=>wwv_flow_api.id(16855630878666880311)
-,p_event_result=>'TRUE'
-,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
-,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
-,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'begin',
-'insert into F15B1_HIST',
-'(EFFECTIVE_DATE, F15B1_RFE_RFE_ID, F15B1_STATUS_STATUS_ID, F15B1_EMP_EMP_ID)',
-'select sysdate, RFE.RFE_ID, STATUS_ID, :P1_EMP',
-'from dual, F15B1_STATUS, F15B1_RFE RFE',
-'where RFE.RFE_ID = :P5_RFE_ID',
-'and RFE_STATUS = ''Final Approved'';',
-'end;',
-''))
-,p_stop_execution_on_error=>'Y'
-,p_wait_for_result=>'Y'
-);
-wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(16671541635229221921)
 ,p_name=>'Submit RFE'
 ,p_event_sequence=>90
@@ -16668,9 +16626,6 @@ wwv_flow_api.create_page_da_action(
 ,p_stop_execution_on_error=>'Y'
 ,p_wait_for_result=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(16855634768688880350)
 ,p_name=>'New'
@@ -16691,6 +16646,9 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_elements=>'location.reload();'
 ,p_attribute_01=>'N'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(18147601928883202619)
 ,p_name=>'New_1'
@@ -16709,6 +16667,35 @@ wwv_flow_api.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_api.id(16671541250856221917)
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(18312886257578246464)
+,p_name=>'EDApprove RFE'
+,p_event_sequence=>150
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(16855630736747880310)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(18312886658170246466)
+,p_event_id=>wwv_flow_api.id(18312886257578246464)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'begin',
+'insert into F15B1_HIST',
+'(EFFECTIVE_DATE, F15B1_RFE_RFE_ID, F15B1_STATUS_STATUS_ID, F15B1_EMP_EMP_ID)',
+'select sysdate, RFE.RFE_ID, STATUS_ID, :P1_EMP',
+'from dual, F15B1_STATUS, F15B1_RFE RFE',
+'where RFE.RFE_ID = :P5_RFE_ID',
+'and RFE_STATUS = ''Final Approved'';',
+'end;',
+''))
+,p_stop_execution_on_error=>'Y'
+,p_wait_for_result=>'Y'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(16854989539774639259)
@@ -22960,7 +22947,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'RACHELYCHOI@UTEXAS.EDU'
-,p_last_upd_yyyymmddhh24miss=>'20151122225310'
+,p_last_upd_yyyymmddhh24miss=>'20151123183239'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(18065474964137839898)
@@ -23009,11 +22996,10 @@ wwv_flow_api.create_page_button(
 ,p_button_template_options=>'#DEFAULT#'
 ,p_button_template_id=>wwv_flow_api.id(16493077053201820862)
 ,p_button_is_hot=>'Y'
-,p_button_image_alt=>'Apply Changes'
+,p_button_image_alt=>'Approve'
 ,p_button_position=>'REGION_TEMPLATE_NEXT'
 ,p_button_condition=>'P37_RFE_ID'
 ,p_button_condition_type=>'ITEM_IS_NOT_NULL'
-,p_grid_new_grid=>false
 ,p_database_action=>'UPDATE'
 );
 wwv_flow_api.create_page_item(
@@ -23425,7 +23411,7 @@ wwv_flow_api.create_page(
 ,p_user_interface_id=>wwv_flow_api.id(16493082263991820879)
 ,p_name=>'RFE Detail Edit Only'
 ,p_page_mode=>'NORMAL'
-,p_step_title=>'RFE Detail Edit Only'
+,p_step_title=>'RFE Detail'
 ,p_step_sub_title=>'RFE Detail Edit Only'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
@@ -23435,7 +23421,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'RACHELYCHOI@UTEXAS.EDU'
-,p_last_upd_yyyymmddhh24miss=>'20151122235715'
+,p_last_upd_yyyymmddhh24miss=>'20151123180205'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(18147012901323287635)
@@ -24247,7 +24233,7 @@ wwv_flow_api.create_page_button(
 ,p_button_template_id=>wwv_flow_api.id(16493077053201820862)
 ,p_button_image_alt=>'History'
 ,p_button_position=>'REGION_TEMPLATE_EDIT'
-,p_button_redirect_url=>'f?p=&APP_ID.:6:&SESSION.::&DEBUG.:RP::'
+,p_button_redirect_url=>'f?p=&APP_ID.:41:&SESSION.::&DEBUG.:RP::'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(18147013765496287636)
@@ -24424,6 +24410,24 @@ wwv_flow_api.create_page_item(
 end;
 /
 begin
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(18306693106943880154)
+,p_name=>'P39_APPROVAL_REVIEW_DATE'
+,p_item_sequence=>100
+,p_item_plug_id=>wwv_flow_api.id(18147012901323287635)
+,p_prompt=>'Approval Review Date'
+,p_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select F15B1_RFE.APPROVAL_REVIEW_DATE as APPROVAL_REVIEW_DATE',
+' from F15B1_RFE F15B1_RFE',
+' where RFE_ID = :P0_RFE_ID'))
+,p_source_type=>'QUERY'
+,p_display_as=>'NATIVE_DISPLAY_ONLY'
+,p_field_template=>wwv_flow_api.id(16493076563709820858)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'VALUE'
+,p_attribute_04=>'Y'
+);
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(18147050297565287675)
 ,p_name=>'Edit Report - Dialog Closed'
@@ -24747,6 +24751,244 @@ wwv_flow_api.create_page_process(
 ,p_process_name=>'reset page'
 ,p_attribute_01=>'CLEAR_CACHE_CURRENT_PAGE'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+end;
+/
+prompt --application/pages/page_00040
+begin
+wwv_flow_api.create_page(
+ p_id=>40
+,p_user_interface_id=>wwv_flow_api.id(16493082263991820879)
+,p_name=>'Status History View Only'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Status History'
+,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
+,p_first_item=>'NO_FIRST_ITEM'
+,p_page_template_options=>'#DEFAULT#'
+,p_dialog_chained=>'Y'
+,p_overwrite_navigation_list=>'N'
+,p_page_is_public_y_n=>'N'
+,p_cache_mode=>'NOCACHE'
+,p_help_text=>'No help is available for this page.'
+,p_last_updated_by=>'RACHELYCHOI@UTEXAS.EDU'
+,p_last_upd_yyyymmddhh24miss=>'20151123182529'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(18307248540754911302)
+,p_plug_name=>'Status History'
+,p_region_template_options=>'#DEFAULT#'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(16493055596719820834)
+,p_plug_display_sequence=>20
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select rfe_status,',
+'       emp_name,',
+'       effective_date',
+'  from F15B1_HIST',
+'  join F15B1_STATUS on F15B1_STATUS_STATUS_ID = STATUS_ID',
+'  join F15B1_EMP on F15B1_EMP_EMP_ID = EMP_ID',
+'where F15B1_RFE_RFE_ID = :P3_RFE_ID',
+'order by EFFECTIVE_DATE desc'))
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_document_header=>'APEX'
+,p_prn_units=>'INCHES'
+,p_prn_paper_size=>'LETTER'
+,p_prn_width=>8.5
+,p_prn_height=>11
+,p_prn_orientation=>'HORIZONTAL'
+,p_prn_page_header_font_color=>'#000000'
+,p_prn_page_header_font_family=>'Helvetica'
+,p_prn_page_header_font_weight=>'normal'
+,p_prn_page_header_font_size=>'12'
+,p_prn_page_footer_font_color=>'#000000'
+,p_prn_page_footer_font_family=>'Helvetica'
+,p_prn_page_footer_font_weight=>'normal'
+,p_prn_page_footer_font_size=>'12'
+,p_prn_header_bg_color=>'#9bafde'
+,p_prn_header_font_color=>'#000000'
+,p_prn_header_font_family=>'Helvetica'
+,p_prn_header_font_weight=>'normal'
+,p_prn_header_font_size=>'10'
+,p_prn_body_bg_color=>'#efefef'
+,p_prn_body_font_color=>'#000000'
+,p_prn_body_font_family=>'Helvetica'
+,p_prn_body_font_weight=>'normal'
+,p_prn_body_font_size=>'10'
+,p_prn_border_width=>.5
+,p_prn_page_header_alignment=>'CENTER'
+,p_prn_page_footer_alignment=>'CENTER'
+);
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(18307248681681911303)
+,p_max_row_count=>'1000000'
+,p_show_nulls_as=>'-'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_show_search_bar=>'N'
+,p_show_detail_link=>'N'
+,p_owner=>'RACHELYCHOI@UTEXAS.EDU'
+,p_internal_uid=>18307248681681911303
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18307248791502911304)
+,p_db_column_name=>'RFE_STATUS'
+,p_display_order=>10
+,p_column_identifier=>'A'
+,p_column_label=>'Rfe status'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18307248822373911305)
+,p_db_column_name=>'EMP_NAME'
+,p_display_order=>20
+,p_column_identifier=>'B'
+,p_column_label=>'Emp name'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18307248969310911306)
+,p_db_column_name=>'EFFECTIVE_DATE'
+,p_display_order=>30
+,p_column_identifier=>'C'
+,p_column_label=>'Effective date'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(18309050505643189664)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'183090506'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_display_rows=>50
+,p_report_columns=>'RFE_STATUS:EMP_NAME:EFFECTIVE_DATE'
+,p_flashback_enabled=>'N'
+);
+end;
+/
+prompt --application/pages/page_00041
+begin
+wwv_flow_api.create_page(
+ p_id=>41
+,p_user_interface_id=>wwv_flow_api.id(16493082263991820879)
+,p_name=>'Status History Edit Only'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Status History'
+,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
+,p_first_item=>'NO_FIRST_ITEM'
+,p_page_template_options=>'#DEFAULT#'
+,p_dialog_chained=>'Y'
+,p_overwrite_navigation_list=>'N'
+,p_page_is_public_y_n=>'N'
+,p_cache_mode=>'NOCACHE'
+,p_help_text=>'No help is available for this page.'
+,p_last_updated_by=>'RACHELYCHOI@UTEXAS.EDU'
+,p_last_upd_yyyymmddhh24miss=>'20151123180239'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(18309650341220056872)
+,p_plug_name=>'Status History'
+,p_region_template_options=>'#DEFAULT#'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(16493055596719820834)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select rfe_status,',
+'       emp_name,',
+'       effective_date',
+'  from F15B1_HIST',
+'  join F15B1_STATUS on F15B1_STATUS_STATUS_ID = STATUS_ID',
+'  join F15B1_EMP on F15B1_EMP_EMP_ID = EMP_ID',
+'where F15B1_RFE_RFE_ID = :P39_RFE_ID',
+'order by EFFECTIVE_DATE desc'))
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_row_template=>1
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_document_header=>'APEX'
+,p_prn_units=>'INCHES'
+,p_prn_paper_size=>'LETTER'
+,p_prn_width=>8.5
+,p_prn_height=>11
+,p_prn_orientation=>'HORIZONTAL'
+,p_prn_page_header_font_color=>'#000000'
+,p_prn_page_header_font_family=>'Helvetica'
+,p_prn_page_header_font_weight=>'normal'
+,p_prn_page_header_font_size=>'12'
+,p_prn_page_footer_font_color=>'#000000'
+,p_prn_page_footer_font_family=>'Helvetica'
+,p_prn_page_footer_font_weight=>'normal'
+,p_prn_page_footer_font_size=>'12'
+,p_prn_header_bg_color=>'#9bafde'
+,p_prn_header_font_color=>'#000000'
+,p_prn_header_font_family=>'Helvetica'
+,p_prn_header_font_weight=>'normal'
+,p_prn_header_font_size=>'10'
+,p_prn_body_bg_color=>'#efefef'
+,p_prn_body_font_color=>'#000000'
+,p_prn_body_font_family=>'Helvetica'
+,p_prn_body_font_weight=>'normal'
+,p_prn_body_font_size=>'10'
+,p_prn_border_width=>.5
+,p_prn_page_header_alignment=>'CENTER'
+,p_prn_page_footer_alignment=>'CENTER'
+);
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(18309650613548056877)
+,p_max_row_count=>'1000000'
+,p_show_nulls_as=>'-'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_show_search_bar=>'N'
+,p_report_list_mode=>'TABS'
+,p_show_detail_link=>'N'
+,p_owner=>'RACHELYCHOI@UTEXAS.EDU'
+,p_internal_uid=>18309650613548056877
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18309650754613056881)
+,p_db_column_name=>'RFE_STATUS'
+,p_display_order=>10
+,p_column_identifier=>'A'
+,p_column_label=>'Rfe status'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18309651160902056882)
+,p_db_column_name=>'EMP_NAME'
+,p_display_order=>20
+,p_column_identifier=>'B'
+,p_column_label=>'Emp name'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(18309651507253056882)
+,p_db_column_name=>'EFFECTIVE_DATE'
+,p_display_order=>30
+,p_column_identifier=>'C'
+,p_column_label=>'Effective date'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(18309651926309056884)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'183096520'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_display_rows=>50
+,p_report_columns=>'RFE_STATUS:EMP_NAME:EFFECTIVE_DATE'
+,p_flashback_enabled=>'N'
 );
 end;
 /

@@ -27,7 +27,7 @@ prompt APPLICATION 33929 - Quidditch
 -- Application Export:
 --   Application:     33929
 --   Name:            Quidditch
---   Date and Time:   04:08 Monday November 23, 2015
+--   Date and Time:   04:36 Monday November 23, 2015
 --   Exported By:     SAMI
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -107,7 +107,7 @@ wwv_flow_api.create_flow(
 ,p_rejoin_existing_sessions=>'N'
 ,p_csv_encoding=>'Y'
 ,p_last_updated_by=>'SAMI'
-,p_last_upd_yyyymmddhh24miss=>'20151123040412'
+,p_last_upd_yyyymmddhh24miss=>'20151123043502'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -9287,7 +9287,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'SAMI'
-,p_last_upd_yyyymmddhh24miss=>'20151123040412'
+,p_last_upd_yyyymmddhh24miss=>'20151123043502'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(18186841648532682831)
@@ -9652,7 +9652,7 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_elements_type=>'ITEM'
 ,p_affected_elements=>'P3_QUERY'
 ,p_attribute_01=>'STATIC_ASSIGNMENT'
-,p_attribute_02=>'"select * from player p, team t where p.team_id = t.team_id"'
+,p_attribute_02=>'"select t.loc, p.name, p.position from player p, team t where p.team_id = t.team_id"'
 ,p_attribute_09=>'N'
 ,p_stop_execution_on_error=>'Y'
 ,p_wait_for_result=>'Y'

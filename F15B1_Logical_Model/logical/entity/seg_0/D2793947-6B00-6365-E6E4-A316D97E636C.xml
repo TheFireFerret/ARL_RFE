@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D2793947-6B00-6365-E6E4-A316D97E636C" name="F15B1_Rfe">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-08 17:07:58 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rfe_id" id="0A2D4546-8118-4EC5-C418-3DA30D212E01">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-08 17:08:13 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="explanation" id="92C85162-7A51-D3F6-F7A3-801E57C30B65">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-08 17:09:13 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="alt_protections" id="D644C63A-F284-E9DD-A85D-5869EEA53FCE">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-08 17:09:28 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="approval_review_date" id="A80B2A80-EBD2-7373-5B6C-E40E2694C914">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-08 17:09:44 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_id" id="825D3FFD-6873-9ED7-C738-726FF2B51EDC">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-08 17:10:28 UTC</createdTime>
+<generatorID>0F2D2CDE-D724-D52E-4C2D-4C35C9B45920</generatorID>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>02D0ACB5-9BA7-0F2B-3301-B2CBBDFE33BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0CE12015-4F2F-D061-C05B-1154FC80A47C" name="F15B1_Rfe PK">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-08 17:08:24 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0A2D4546-8118-4EC5-C418-3DA30D212E01</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

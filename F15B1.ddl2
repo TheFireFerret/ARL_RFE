@@ -1,0 +1,255 @@
+DROP SEQUENCE F15B1_Approver_seq ; 
+create sequence F15B1_Approver_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Approver_PK_trig 
+; 
+
+create or replace trigger F15B1_Approver_PK_trig 
+before insert on F15B1_Approver
+for each row 
+begin 
+select F15B1_Approver_seq.nextval into :new.approver_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Auth_seq ; 
+create sequence F15B1_Auth_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Auth_PK_trig 
+; 
+
+create or replace trigger F15B1_Auth_PK_trig 
+before insert on F15B1_Auth
+for each row 
+begin 
+select F15B1_Auth_seq.nextval into :new.auth_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Comment_seq ; 
+create sequence F15B1_Comment_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Comment_PK_trig 
+; 
+
+create or replace trigger F15B1_Comment_PK_trig 
+before insert on F15B1_Comment
+for each row 
+begin 
+select F15B1_Comment_seq.nextval into :new.comment_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Contact_seq ; 
+create sequence F15B1_Contact_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Contact_PK_trig 
+; 
+
+create or replace trigger F15B1_Contact_PK_trig 
+before insert on F15B1_Contact
+for each row 
+begin 
+select F15B1_Contact_seq.nextval into :new.contact_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Doc_seq ; 
+create sequence F15B1_Doc_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Doc_PK_trig 
+; 
+
+create or replace trigger F15B1_Doc_PK_trig 
+before insert on F15B1_Doc
+for each row 
+begin 
+select F15B1_Doc_seq.nextval into :new.doc_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Emp_seq ; 
+create sequence F15B1_Emp_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Emp_PK_trig 
+; 
+
+create or replace trigger F15B1_Emp_PK_trig 
+before insert on F15B1_Emp
+for each row 
+begin 
+select F15B1_Emp_seq.nextval into :new.emp_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Hist_seq ; 
+create sequence F15B1_Hist_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Hist_PK_trig 
+; 
+
+create or replace trigger F15B1_Hist_PK_trig 
+before insert on F15B1_Hist
+for each row 
+begin 
+select F15B1_Hist_seq.nextval into :new.hist_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Lab_seq ; 
+create sequence F15B1_Lab_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Lab_PK_trig 
+; 
+
+create or replace trigger F15B1_Lab_PK_trig 
+before insert on F15B1_Lab
+for each row 
+begin 
+select F15B1_Lab_seq.nextval into :new.lab_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Rfe_seq ; 
+create sequence F15B1_Rfe_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Rfe_PK_trig 
+; 
+
+create or replace trigger F15B1_Rfe_PK_trig 
+before insert on F15B1_Rfe
+for each row 
+begin 
+select F15B1_Rfe_seq.nextval into :new.rfe_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Rfe_Task_seq ; 
+create sequence F15B1_Rfe_Task_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Rfe_Task_PK_trig 
+; 
+
+create or replace trigger F15B1_Rfe_Task_PK_trig 
+before insert on F15B1_Rfe_Task
+for each row 
+begin 
+select F15B1_Rfe_Task_seq.nextval into :new.rfe_task_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Role_seq ; 
+create sequence F15B1_Role_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Role_PK_trig 
+; 
+
+create or replace trigger F15B1_Role_PK_trig 
+before insert on F15B1_Role
+for each row 
+begin 
+select F15B1_Role_seq.nextval into :new.role_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Status_seq ; 
+create sequence F15B1_Status_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Status_PK_trig 
+; 
+
+create or replace trigger F15B1_Status_PK_trig 
+before insert on F15B1_Status
+for each row 
+begin 
+select F15B1_Status_seq.nextval into :new.status_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15B1_Task_seq ; 
+create sequence F15B1_Task_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15B1_Task_PK_trig 
+; 
+
+create or replace trigger F15B1_Task_PK_trig 
+before insert on F15B1_Task
+for each row 
+begin 
+select F15B1_Task_seq.nextval into :new.task_id from dual; 
+end; 
+/
+
+DROP INDEX F15B1_Emp_emp_id_FK_0 ;
+CREATE INDEX F15B1_Emp_emp_id_FK_0 ON F15B1_Approver(F15B1_Emp_emp_id) ;
+DROP INDEX F15B1_Rfe_rfe_id_FK_1 ;
+CREATE INDEX F15B1_Rfe_rfe_id_FK_1 ON F15B1_Approver(F15B1_Rfe_rfe_id) ;
+DROP INDEX F15B1_Role_role_id_FK_2 ;
+CREATE INDEX F15B1_Role_role_id_FK_2 ON F15B1_Approver(F15B1_Role_role_id) ;
+DROP INDEX F15B1_Emp_emp_id_FK_3 ;
+CREATE INDEX F15B1_Emp_emp_id_FK_3 ON F15B1_Comment(F15B1_Emp_emp_id) ;
+DROP INDEX F15B1_Rfe_rfe_id_FK_4 ;
+CREATE INDEX F15B1_Rfe_rfe_id_FK_4 ON F15B1_Comment(F15B1_Rfe_rfe_id) ;
+DROP INDEX F15B1_Emp_emp_id_FK_5 ;
+CREATE INDEX F15B1_Emp_emp_id_FK_5 ON F15B1_Contact(F15B1_Emp_emp_id) ;
+DROP INDEX F15B1_Rfe_rfe_id_FK_6 ;
+CREATE INDEX F15B1_Rfe_rfe_id_FK_6 ON F15B1_Contact(F15B1_Rfe_rfe_id) ;
+DROP INDEX F15B1_Role_role_id_FK_7 ;
+CREATE INDEX F15B1_Role_role_id_FK_7 ON F15B1_Contact(F15B1_Role_role_id) ;
+DROP INDEX F15B1_Rfe_rfe_id_FK_8 ;
+CREATE INDEX F15B1_Rfe_rfe_id_FK_8 ON F15B1_Doc(F15B1_Rfe_rfe_id) ;
+DROP INDEX F15B1_Auth_auth_id_FK_9 ;
+CREATE INDEX F15B1_Auth_auth_id_FK_9 ON F15B1_Emp(F15B1_Auth_auth_id) ;
+DROP INDEX F15B1_Lab_lab_id_FK_10 ;
+CREATE INDEX F15B1_Lab_lab_id_FK_10 ON F15B1_Emp(F15B1_Lab_lab_id) ;
+DROP INDEX F15B1_Emp_emp_id_FK_11 ;
+CREATE INDEX F15B1_Emp_emp_id_FK_11 ON F15B1_Hist(F15B1_Emp_emp_id) ;
+DROP INDEX F15B1_Rfe_rfe_id_FK_12 ;
+CREATE INDEX F15B1_Rfe_rfe_id_FK_12 ON F15B1_Hist(F15B1_Rfe_rfe_id) ;
+DROP INDEX F15B1_Status_status_id_FK_13 ;
+CREATE INDEX F15B1_Status_status_id_FK_13 ON F15B1_Hist(F15B1_Status_status_id) ;
+DROP INDEX F15B1_Emp_emp_id_FK_14 ;
+CREATE INDEX F15B1_Emp_emp_id_FK_14 ON F15B1_Rfe(F15B1_Emp_emp_id) ;
+DROP INDEX F15B1_Rfe_rfe_id_FK_15 ;
+CREATE INDEX F15B1_Rfe_rfe_id_FK_15 ON F15B1_Rfe_Task(F15B1_Rfe_rfe_id) ;
+DROP INDEX F15B1_Task_task_id_FK_16 ;
+CREATE INDEX F15B1_Task_task_id_FK_16 ON F15B1_Rfe_Task(F15B1_Task_task_id) ;

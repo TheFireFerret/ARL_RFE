@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="003E9034-3563-9D8B-9EDB-0A48FBD46608" name="F15B1_Comment">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-02 22:36:29 UTC</createdTime>
+<ownerDesignName>F15B1_Conceptual_Model</ownerDesignName>
+<engineerTo>
+<item key="BA2864AC-B9D4-EADC-2655-C7B110149CE6" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="comment_id" id="5C52A9A8-1919-EC96-47C3-8BA46E345882">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-02 22:36:41 UTC</createdTime>
+<ownerDesignName>F15B1_Conceptual_Model</ownerDesignName>
+<engineerTo>
+<item key="BA2864AC-B9D4-EADC-2655-C7B110149CE6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comment_entry_date" id="B7CCBF35-1446-07AB-DD48-F44F3D2707B6">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-08 07:37:14 UTC</createdTime>
+<ownerDesignName>F15B1_Conceptual_Model</ownerDesignName>
+<engineerTo>
+<item key="BA2864AC-B9D4-EADC-2655-C7B110149CE6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comments" id="6C1F3D69-904D-860E-EA61-A6CFBA40A2D2">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-08 07:37:50 UTC</createdTime>
+<ownerDesignName>F15B1_Conceptual_Model</ownerDesignName>
+<engineerTo>
+<item key="BA2864AC-B9D4-EADC-2655-C7B110149CE6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe_id" id="63F58344-2746-E5C3-C831-1FAB5E9FB8A4">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-02 22:37:06 UTC</createdTime>
+<generatorID>E3398A49-0AFB-17CF-A048-591D565E6A4A</generatorID>
+<ownerDesignName>F15B1_Conceptual_Model</ownerDesignName>
+<engineerTo>
+<item key="BA2864AC-B9D4-EADC-2655-C7B110149CE6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>91A8F8C2-326D-869D-2D15-727DAE65E9C9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_id" id="7ADB74F2-3FCF-BBE4-B7A4-FB20B6F65B5B">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-02 22:41:49 UTC</createdTime>
+<generatorID>16E9EAC3-AD06-D61D-FC73-202C64F66F31</generatorID>
+<ownerDesignName>F15B1_Conceptual_Model</ownerDesignName>
+<engineerTo>
+<item key="BA2864AC-B9D4-EADC-2655-C7B110149CE6" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>902A6911-D759-0F48-A549-60810A2BA75E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="32E03F1E-3986-1A03-031C-C3BAA4E77E09" name="F15B1_Comment PK">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-02 22:36:47 UTC</createdTime>
+<ownerDesignName>F15B1_Conceptual_Model</ownerDesignName>
+<engineerTo>
+<item key="BA2864AC-B9D4-EADC-2655-C7B110149CE6" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5C52A9A8-1919-EC96-47C3-8BA46E345882</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

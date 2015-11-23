@@ -1,0 +1,64 @@
+truncate table F15B1_AUTH;
+truncate table F15B1_STATUS;
+truncate table F15B1_ROLE;
+truncate table F15B1_LAB;
+truncate table F15B1_EMP;
+truncate table F15B1_TASK;
+
+alter trigger F15B1_AUTH_PK_TRIG disable;
+alter trigger F15B1_STATUS_PK_TRIG disable;
+alter trigger F15B1_ROLE_PK_TRIG disable;
+alter trigger F15B1_LAB_PK_TRIG disable;
+alter trigger F15B1_EMP_PK_TRIG disable;
+alter trigger F15B1_TASK_PK_TRIG disable;
+
+INSERT INTO F15B1_AUTH (auth_id, right) VALUES (1, 'View');
+INSERT INTO F15B1_AUTH (auth_id, right) VALUES (2, 'Edit');
+
+INSERT INTO F15B1_STATUS (status_id, rfe_status, description) VALUES (1,'Entered', 'The RFE has been created but has not yet been submitted for approval.');
+INSERT INTO F15B1_STATUS (status_id, rfe_status, description) VALUES (2,'Submitted', 'The RFE has been submitted to the Lab System Administrator for approval.');
+INSERT INTO F15B1_STATUS (status_id, rfe_status, description) VALUES (3,'Returned', 'The RFE has been returned for further information or clarification. Once Submitted again, it will follow the same routing as an Entered RFE.');
+INSERT INTO F15B1_STATUS (status_id, rfe_status, description) VALUES (4,'Recalled', 'The requestor has recalled an RFE that has not yet reached final approval. Once Submitted again, it will follow the same routing as an Entered RFE.');
+INSERT INTO F15B1_STATUS (status_id, rfe_status, description) VALUES (5,'Rejected','The RFE has been rejected and cannot be implemented.');
+INSERT INTO F15B1_STATUS (status_id, rfe_status, description) VALUES (6,'SA Approved','The Lab System Administrator has approved the RFE; it has been submitted for Lab Director approval.');
+INSERT INTO F15B1_STATUS (status_id, rfe_status, description) VALUES (7,'LD Approval','The Lab Director has approved the RFE; it has been submitted for Network Security Panel approval.');
+INSERT INTO F15B1_STATUS (status_id, rfe_status, description) VALUES (8,'CH Approval','The Chairperson has approved the RFE; it has been submitted for Executive Director approval.');
+INSERT INTO F15B1_STATUS (status_id, rfe_status, description) VALUES (9,'Final Approved','The Executive Director''s Office has given final approval for the RFE and it may be implemented.');
+
+INSERT INTO F15B1_ROLE (role_id, role_type, description) VALUES (1,'Requestor','The employee who create the RFE');
+INSERT INTO F15B1_ROLE (role_id, role_type, description) VALUES (2,'FYI Reviewer','An employee with peripheral interests; will get automatically notified at certain stages');
+INSERT INTO F15B1_ROLE (role_id, role_type, description) VALUES (3,'Sys Admin Approver','First round approver for new RFE''s in their lab');
+INSERT INTO F15B1_ROLE (role_id, role_type, description) VALUES (4,'Lab Director Approver','Second round approver for new RFE''s in their lab');
+INSERT INTO F15B1_ROLE (role_id, role_type, description) VALUES (5,'Chairperson Approver','Network Security Panel approver');
+INSERT INTO F15B1_ROLE (role_id, role_type, description) VALUES (6,'Exec Dir Approver','Final round approver for all RFE''s');
+
+INSERT INTO F15B1_LAB (lab_id, lab_code) VALUES (1, 'Admn');
+INSERT INTO F15B1_LAB (lab_id, lab_code) VALUES (2, 'LabA');
+INSERT INTO F15B1_LAB (lab_id, lab_code) VALUES (3, 'LabB');
+
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (1, 'Smith, Adam W.', 'smith@mail.com', 'A100', '111-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'N', 'Y', 'N', 2, 3);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (2, 'Allen, Joe B.', 'allen@mail.com', 'A200', '222-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'N', 'N', 'Y', 1, 3);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (3, 'Jones, Bill A.', 'jones@mail.com', 'A300', '333-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'Y', 'N', 'N', 'N', NULL, 1);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (4, 'Martin, Sarah K.', 'martin@mail.com', 'A400', '444-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'Y', 'N', 'N', NULL, 1);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (5, 'Blake, Emily S.', 'blake@mail.com', 'A500', '555-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'Y', 'N', 'N', 'N', NULL, 2);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (6, 'Scott, Amanda J.', 'scott@mail.com', 'A600', '666-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'Y', 'N', 'N', NULL, 2);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (7, 'King, David B.', 'king@mail.com', 'B100', '777-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'N', 'N', 'N', NULL, 1);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (8, 'Ford, Henry J.', 'ford@mail.com', 'B200', '888-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'N', 'N', 'N', NULL, 1);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (9, 'Adams, John Q.', 'adams@mail.com', 'B300', '999-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'N', 'N', 'N', NULL, 1);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (10, 'Bond, James A.', 'james@mail.com', 'B400', '000-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'N', 'N', 'N', NULL, 2);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (11, 'Potter, Harry J.', 'clark@mail.com', 'B500', '011-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'N', 'N', 'N', NULL, 2);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (12, 'Turner, Will B.', 'turner@mail.com', 'B600', '022-1234', 'A', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'N', 'N', 'N', NULL, 2);
+INSERT INTO F15B1_EMP (emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, system_admin_flag, lab_director_flag, exec_director_flag, chairperson_flag, f15b1_auth_auth_id, f15b1_lab_lab_id) VALUES (13, 'Doe, John Q.', 'doe@mail.com', 'B700', '022-1234', 'I', TO_DATE('11-21-2015','MM/DD/YYYY'), 'N', 'N', 'N', 'N', NULL, 2);
+
+INSERT INTO F15B1_TASK (task_id, task_abbreviation, task_description) VALUES (1, 'Flight Test', 'Flight Test description');
+INSERT INTO F15B1_TASK (task_id, task_abbreviation, task_description) VALUES (2, 'Task 2', 'Task 2 description');
+INSERT INTO F15B1_TASK (task_id, task_abbreviation, task_description) VALUES (3, 'Task 3', 'Task 3 description');
+INSERT INTO F15B1_TASK (task_id, task_abbreviation, task_description) VALUES (4, 'Task 4', 'Task 4 description');
+INSERT INTO F15B1_TASK (task_id, task_abbreviation, task_description) VALUES (5, 'Task 5', 'Task 5 description');
+
+alter trigger F15B1_AUTH_PK_TRIG enable;
+alter trigger F15B1_STATUS_PK_TRIG enable;
+alter trigger F15B1_ROLE_PK_TRIG enable;
+alter trigger F15B1_LAB_PK_TRIG enable;
+alter trigger F15B1_EMP_PK_TRIG enable;
+alter trigger F15B1_TASK_PK_TRIG enable;

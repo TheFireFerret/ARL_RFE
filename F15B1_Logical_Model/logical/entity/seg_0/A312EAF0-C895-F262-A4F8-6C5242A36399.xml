@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A312EAF0-C895-F262-A4F8-6C5242A36399" name="F15B1_Approver">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-22 17:23:24 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="approver_id" id="9126C92C-E6F9-EEB4-0AA4-BB368978AFF7">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-22 17:23:24 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="effective_date" id="8A35DAF6-17AE-3065-4A69-C8119B55299E">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-22 17:23:24 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comments" id="FD3AD85B-6009-3BD5-2C46-E3E8450AC582">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-22 17:23:24 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe_id" id="5BC3B4D4-0887-BB1B-E896-2D744375660E">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-22 17:24:36 UTC</createdTime>
+<generatorID>E55B9C92-0EB1-086F-0A67-8A8BE8F6F46A</generatorID>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>0A2D4546-8118-4EC5-C418-3DA30D212E01</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_id" id="B765356B-9EE5-863D-3BFF-FCEDAF613FB9">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-22 17:25:37 UTC</createdTime>
+<generatorID>9913FB17-8FF8-0C4D-589F-3FEA107698A4</generatorID>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>02D0ACB5-9BA7-0F2B-3301-B2CBBDFE33BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="role_id" id="8185B0C5-EA8F-34C9-5893-0CC6C5A8906D">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-22 17:25:51 UTC</createdTime>
+<generatorID>54EF5A33-14DE-662D-0CE0-9E80BCA5206C</generatorID>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>8DD534F1-9A5A-55E5-2F37-31DA4E2321B2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EBD3259E-A07B-B6E9-2AD3-51DE4461A386" name="F15B1_Approver PK">
+<createdBy>rachelchoi</createdBy>
+<createdTime>2015-11-22 17:23:24 UTC</createdTime>
+<ownerDesignName>F15B1_Logical_Model</ownerDesignName>
+<engineerTo>
+<item key="8F080E3B-3BFB-D321-7415-2EF5BA9DCF24" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>9126C92C-E6F9-EEB4-0AA4-BB368978AFF7</newElementsIDs>
+<usedAttributes>
+<attributeRef>9126C92C-E6F9-EEB4-0AA4-BB368978AFF7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

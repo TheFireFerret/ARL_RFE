@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="003E9034-3563-9D8B-9EDB-0A48FBD46608" name="F15B1_Comment" seqName="seg_0"/>
+   <object objectType="Entity" objectID="01EF77DC-5014-7678-B9D3-5A8CA64B2599" name="F15B1_Role" seqName="seg_0"/>
+   <object objectType="Entity" objectID="045EFD6C-9F78-A9A7-0DDB-CF95418FA012" name="F15B1_Emp" seqName="seg_0"/>
+   <object objectType="Entity" objectID="286153A0-2704-BF66-E5C7-EC9A707B0D66" name="F15B1_Status" seqName="seg_0"/>
+   <object objectType="Entity" objectID="30F4C023-DEAF-6121-334E-2D4A078CC4DB" name="F15B1_Doc" seqName="seg_0"/>
+   <object objectType="Entity" objectID="37C3C8E2-ABD3-BE80-344A-7A6B165C1C7C" name="F15B1_Exec_Dir" seqName="seg_0"/>
+   <object objectType="Entity" objectID="3BBD7BAD-2B65-CA97-A93B-B2A57FDF3316" name="F15B1_Lab_Dir" seqName="seg_0"/>
+   <object objectType="Entity" objectID="6C595E31-C1DB-25A0-6F64-71B4783A2716" name="F15B1_Lab" seqName="seg_0"/>
+   <object objectType="Entity" objectID="78DCFFB4-D7E5-B39D-368C-83F312398D1B" name="F15B1_Lab_Sys_Admin" seqName="seg_0"/>
+   <object objectType="Entity" objectID="7AB78132-1AFF-F575-9B23-8AB4E4EE2CBC" name="F15B1_Task" seqName="seg_0"/>
+   <object objectType="Entity" objectID="A32479A6-6354-E446-355A-7A6C0CA5ED9B" name="F15B1_Hist" seqName="seg_0"/>
+   <object objectType="Entity" objectID="E6957F21-4BF9-EDA8-6739-9BF67E916E09" name="F15B1_Auth" seqName="seg_0"/>
+   <object objectType="Entity" objectID="E8A421E1-11F7-9D5D-2EF6-485AD36CAF20" name="F15B1_Chairperson" seqName="seg_0"/>
+   <object objectType="Entity" objectID="FBFE6A7A-5B2A-E545-4C1E-85B64A8F8C52" name="F15B1_Rfe" seqName="seg_0"/>
+   <object objectType="Relation" objectID="03B3DE93-86D8-1873-0456-D8A2FC44D1C3" name="R9" seqName="seg_0"/>
+   <object objectType="Relation" objectID="16E9EAC3-AD06-D61D-FC73-202C64F66F31" name="R11" seqName="seg_0"/>
+   <object objectType="Relation" objectID="2A312B8F-1D00-AF3E-25B5-1C06A482EA90" name="R14" seqName="seg_0"/>
+   <object objectType="Relation" objectID="346E31CA-716F-E017-62B3-46EEA6C2875B" name="R7" seqName="seg_0"/>
+   <object objectType="Relation" objectID="37887810-6201-448E-44B4-C62E635A7AC4" name="R3" seqName="seg_0"/>
+   <object objectType="Relation" objectID="668996D6-44A2-56EC-7466-029A8ADAC2CA" name="R1" seqName="seg_0"/>
+   <object objectType="Relation" objectID="77C0D0E9-376C-AE3A-35C6-DFAE11872405" name="R13" seqName="seg_0"/>
+   <object objectType="Relation" objectID="7CBDBC0F-D1F4-2D6A-07DD-A61827BB03A2" name="R5" seqName="seg_0"/>
+   <object objectType="Relation" objectID="94204853-0345-8CA4-573F-53FEF3B7DD92" name="R8" seqName="seg_0"/>
+   <object objectType="Relation" objectID="BC51DFFE-6E67-B5F5-C4ED-305A90B9E8F7" name="R12" seqName="seg_0"/>
+   <object objectType="Relation" objectID="D8ED2CE1-8B48-4E81-AA55-510B78D79715" name="R2" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E3398A49-0AFB-17CF-A048-591D565E6A4A" name="R10" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="4FD81C51-7E11-0938-61C7-8DA0A3A7E654" name="Hierarchy_1" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="5B705355-E921-5F9F-FE69-DEA1E5F7E668" name="Hierarchy_2" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="E0EE5543-5DE7-AABE-7682-D82E81E25B1B" name="Hierarchy_3" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="F84EEAED-3C60-C77E-229A-A57C6DE1DF7E" name="Hierarchy_4" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

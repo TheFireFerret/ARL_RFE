@@ -1,0 +1,61 @@
+# Change the following oracle account id and password to your oracle account id and password. Also, change A0 to your group's number but don't use F15 because it will make some internal names be too long.
+conn = connectTo 'jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl' 'C##cs347_sag3289' 'orcl_sag3289' 'rdf_mode' 'B1';
+
+Neo4j on conn "CREATE (:player { p_id : 1 , name : 'Royston Idlewind', position : 'Chaser' , team_id : 1 })"
+Neo4j on conn "CREATE (:player { p_id : 2 , name : 'Matthew Echunga', position : 'Chaser' , team_id : 1 })"
+Neo4j on conn "CREATE (:player { p_id : 3 , name : 'Kenneth Hastings', position : 'Chaser' , team_id : 1 })"
+Neo4j on conn "CREATE (:player { p_id : 4 , name : 'Jonny Nuhaka', position : 'Keeper' , team_id : 1 })"
+Neo4j on conn "CREATE (:player { p_id : 5 , name : 'Kylie Meadows', position : 'Beater' , team_id : 1 })"
+Neo4j on conn "CREATE (:player { p_id : 6 , name : 'Kelly Whakkaarangapawarau', position : 'Beater' , team_id : 1 })"
+Neo4j on conn "CREATE (:player { p_id : 7 , name : 'Lucy Karoonda', position : 'Seeker' , team_id : 1 })"
+
+Neo4j on conn "CREATE (:player { p_id : 8 , name : 'Fernando Diaz', position : 'Chaser' , team_id : 2 })"
+Neo4j on conn "CREATE (:player { p_id : 9 , name : 'Alejandra Alonso', position : 'Chaser' , team_id : 2 })"
+Neo4j on conn "CREATE (:player { p_id : 10 , name : 'Flores', position : 'Chaser' , team_id : 2 })"
+Neo4j on conn "CREATE (:player { p_id : 11 , name : 'Raul Almeida', position : 'Keeper' , team_id : 2 })"
+Neo4j on conn "CREATE (:player { p_id : 12 , name : 'Santos', position : 'Beater' , team_id : 2 })"
+Neo4j on conn "CREATE (:player { p_id : 13 , name : 'Clodoaldo', position : 'Beater' , team_id : 2 })"
+Neo4j on conn "CREATE (:player { p_id : 14 , name : 'Tony Silva', position : 'Seeker' , team_id : 2 })"
+
+Neo4j on conn "CREATE (:player { p_id : 15 , name : 'Avery Hawksworth', position : 'Chaser' , team_id : 3 })"
+Neo4j on conn "CREATE (:player { p_id : 16 , name : 'Keaton Flitney', position : 'Chaser' , team_id : 3 })"
+Neo4j on conn "CREATE (:player { p_id : 17 , name : 'Edric Vosper', position : 'Chaser' , team_id : 3 })"
+Neo4j on conn "CREATE (:player { p_id : 18 , name : 'Denison Frisby', position : 'Keeper' , team_id : 3 })"
+Neo4j on conn "CREATE (:player { p_id : 19 , name : 'Dawn Withey', position : 'Beater' , team_id : 3 })"
+Neo4j on conn "CREATE (:player { p_id : 20 , name : 'Lucas Bargeworthy', position : 'Beater' , team_id : 3 })"
+Neo4j on conn "CREATE (:player { p_id : 21 , name : 'Blythe Parkin', position : 'Seeker' , team_id : 3 })"
+
+Neo4j on conn "CREATE (:player { p_id : 22 , name : 'Clara Ivanova', position : 'Chaser' , team_id : 4 })"
+Neo4j on conn "CREATE (:player { p_id : 23 , name : 'Vasily Dimitrov', position : 'Chaser' , team_id : 4 })"
+Neo4j on conn "CREATE (:player { p_id : 24 , name : 'Alexei Levski', position : 'Chaser' , team_id : 4 })"
+Neo4j on conn "CREATE (:player { p_id : 25 , name : 'Lev Zograf', position : 'Keeper' , team_id : 4 })"
+Neo4j on conn "CREATE (:player { p_id : 26 , name : 'Ivan Volkov', position : 'Beater' , team_id : 4 })"
+Neo4j on conn "CREATE (:player { p_id : 27 , name : 'Pyotr Vulchanov', position : 'Beater' , team_id : 4 })"
+Neo4j on conn "CREATE (:player { p_id : 28 , name : 'Viktor Krum', position : 'Seeker' , team_id : 4 })"
+
+Neo4j on conn "CREATE (:player { p_id : 29 , name : 'Noriyuki Sato', position : 'Chaser' , team_id : 5 })"
+Neo4j on conn "CREATE (:player { p_id : 30 , name : 'Yoshihiro Suzuki', position : 'Chaser' , team_id : 5 })"
+Neo4j on conn "CREATE (:player { p_id : 31 , name : 'Ryotaro Tanaka', position : 'Chaser' , team_id : 5 })"
+Neo4j on conn "CREATE (:player { p_id : 32 , name : 'Tamotsu Iwamoto', position : 'Keeper' , team_id : 5 })"
+Neo4j on conn "CREATE (:player { p_id : 33 , name : 'Minaka Takahashi', position : 'Beater' , team_id : 5 })"
+Neo4j on conn "CREATE (:player { p_id : 34 , name : 'Keiko Takahashi', position : 'Beater' , team_id : 5 })"
+Neo4j on conn "CREATE (:player { p_id : 35 , name : 'Shizuka Watanabe', position : 'Seeker' , team_id : 5 })"
+
+Neo4j on conn "CREATE (:team {team_id : 1 , loc: 'Australia' , won : 1 })"
+Neo4j on conn "CREATE (:team {team_id : 2 , loc: 'Brazil' , won : 5 })"
+Neo4j on conn "CREATE (:team {team_id : 3 , loc: 'England' , won : 0 })"
+Neo4j on conn "CREATE (:team {team_id : 4 , loc: 'Bulgaria' , won : 1 })"
+Neo4j on conn "CREATE (:team {team_id : 5 , loc: 'Japan' , won : 0 })"
+
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 1 AND b.team_id = 1 CREATE (a)<-[:player]-(b)"
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 2 AND b.team_id = 2 CREATE (a)<-[:player]-(b)"
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 3 AND b.team_id = 3 CREATE (a)<-[:player]-(b)"
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 4 AND b.team_id = 4 CREATE (a)<-[:player]-(b)"
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 5 AND b.team_id = 5 CREATE (a)<-[:player]-(b)"
+
+
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 1 AND b.team_id = 1 CREATE (a)-[:team]->(b)"
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 2 AND b.team_id = 2 CREATE (a)-[:team]->(b)"
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 3 AND b.team_id = 3 CREATE (a)-[:team]->(b)"
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 4 AND b.team_id = 4 CREATE (a)-[:team]->(b)"
+Neo4j on conn "MATCH (a:player),(b:team) WHERE a.team_id = 5 AND b.team_id = 5 CREATE (a)-[:team]->(b)"

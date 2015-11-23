@@ -3,7 +3,7 @@
 
 Sami Glasco & Rachel Choi
 
-[Part 1: ARL Application](https://apex.oracle.com/pls/apex/f?p=91923:1:106321553105021:::::&tz=-6:00)
+[Part 1: ARL Application](https://apex.oracle.com/pls/apex/f?p=91923&tz=-6:00)
 
-[Part 2: Quidditch Players](https://apex.oracle.com/pls/apex/f?p=93048:1:100186612638773:::::)
+[Part 2: Quidditch Players](https://apex.oracle.com/pls/apex/f?p=33929)
 

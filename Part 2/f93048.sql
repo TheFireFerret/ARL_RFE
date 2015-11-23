@@ -27,7 +27,7 @@ prompt APPLICATION 93048 - F15 Mobile Rest App
 -- Application Export:
 --   Application:     93048
 --   Name:            F15 Mobile Rest App
---   Date and Time:   22:41 Saturday November 21, 2015
+--   Date and Time:   01:58 Monday November 23, 2015
 --   Exported By:     SAMI
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -38,8 +38,8 @@ prompt APPLICATION 93048 - F15 Mobile Rest App
 -- Application Statistics:
 --   Pages:                      2
 --     Items:                    9
---     Processes:                1
---     Regions:                  7
+--     Processes:                2
+--     Regions:                  8
 --     Buttons:                  5
 --     Dynamic Actions:          4
 --   Shared Components:
@@ -106,7 +106,7 @@ wwv_flow_api.create_flow(
 ,p_csv_encoding=>'Y'
 ,p_auto_time_zone=>'N'
 ,p_last_updated_by=>'SAMI'
-,p_last_upd_yyyymmddhh24miss=>'20151121223954'
+,p_last_upd_yyyymmddhh24miss=>'20151123015425'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -1955,7 +1955,8 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'N'
 ,p_protection_level=>'D'
 ,p_cache_mode=>'NOCACHE'
-,p_last_upd_yyyymmddhh24miss=>'20151021211307'
+,p_last_updated_by=>'SAMI'
+,p_last_upd_yyyymmddhh24miss=>'20151123013014'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(15203958011741300648)
@@ -1982,8 +1983,7 @@ wwv_flow_api.create_page_plug(
 ,p_include_in_reg_disp_sel_yn=>'N'
 ,p_plug_display_point=>'REGION_POSITION_08'
 ,p_plug_query_row_template=>1
-,p_plug_display_condition_type=>'CURRENT_PAGE_NOT_IN_CONDITION'
-,p_plug_display_when_condition=>'101'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'TEXT'
 ,p_attribute_03=>'Y'
@@ -2041,9 +2041,9 @@ begin
 wwv_flow_api.create_page(
  p_id=>1
 ,p_user_interface_id=>wwv_flow_api.id(15203957450737300646)
-,p_name=>'Home'
+,p_name=>'Quidditch Players'
 ,p_page_mode=>'NORMAL'
-,p_step_title=>'Home'
+,p_step_title=>'Quidditch Players'
 ,p_step_sub_title=>'Home'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_error_notification_text=>'oops'
@@ -2054,69 +2054,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'SAMI'
-,p_last_upd_yyyymmddhh24miss=>'20151121223954'
-);
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(17884527523395136942)
-,p_plug_name=>'Players'
-,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(15203951031811300639)
-,p_plug_display_sequence=>40
-,p_include_in_reg_disp_sel_yn=>'N'
-,p_plug_display_point=>'BODY'
-,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'select DISTINCT',
-'jt1.position position,',
-'jt2.name name,',
-'jt3.loc loc',
-'',
-'from apex_collections t,',
-'json_table(t.clob001, ''$.X1_1[*]'' COLUMNS rid	for	ordinality,	position varchar2(300) path	''$'') jt1,',
-'json_table(t.clob001, ''$.X0_1[*]'' COLUMNS rid	for	ordinality,	name varchar2(300) path	''$'') jt2,',
-'json_table(t.clob001, ''$.LOC[*]'' COLUMNS rid	for	ordinality,	loc varchar2(300) path	''$'') jt3',
-'',
-'where t.collection_name = ''P1_DOREST_RESULTS''',
-'and jt2.rid = jt1.rid and jt2.rid = jt3.rid',
-'order by 3,1'))
-,p_plug_source_type=>'NATIVE_JQM_REFLOW'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_attribute_01=>'STRIPE:STROKE'
-);
-wwv_flow_api.create_region_column(
- p_id=>wwv_flow_api.id(18051017251550845109)
-,p_name=>'POSITION'
-,p_data_type=>'POSITION'
-,p_is_visible=>true
-,p_display_sequence=>10
-,p_heading=>'Position'
-,p_heading_alignment=>'CENTER'
-,p_value_alignment=>'LEFT'
-,p_attribute_01=>'PLAIN'
-,p_escape_on_http_output=>true
-);
-wwv_flow_api.create_region_column(
- p_id=>wwv_flow_api.id(18051017308152845110)
-,p_name=>'NAME'
-,p_data_type=>'NAME'
-,p_is_visible=>true
-,p_display_sequence=>20
-,p_heading=>'Name'
-,p_heading_alignment=>'CENTER'
-,p_value_alignment=>'LEFT'
-,p_attribute_01=>'PLAIN'
-,p_escape_on_http_output=>true
-);
-wwv_flow_api.create_region_column(
- p_id=>wwv_flow_api.id(18051017444552845111)
-,p_name=>'LOC'
-,p_data_type=>'LOC'
-,p_is_visible=>true
-,p_display_sequence=>30
-,p_heading=>'Loc'
-,p_heading_alignment=>'CENTER'
-,p_value_alignment=>'LEFT'
-,p_attribute_01=>'PLAIN'
-,p_escape_on_http_output=>true
+,p_last_upd_yyyymmddhh24miss=>'20151123015425'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(18008501781806504380)
@@ -2163,51 +2101,6 @@ wwv_flow_api.create_report_columns(
 ,p_report_column_width=>100
 );
 wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(18041775314651080002)
-,p_plug_name=>'Teams'
-,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(15203951031811300639)
-,p_plug_display_sequence=>60
-,p_include_in_reg_disp_sel_yn=>'N'
-,p_plug_display_point=>'BODY'
-,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'select ',
-'jt1.loc as Team,',
-'jt2.won as "World Cups Won"',
-'from apex_collections t,',
-'json_table(t.clob001, ''$.LOC[*]'' COLUMNS rid for ordinality, loc varchar2(300) path	''$'') jt1,',
-'json_table(t.clob001, ''$.WON[*]'' COLUMNS rid for ordinality, won NUMBER path ''$'') jt2',
-'where t.collection_name = ''P1_DOREST_RESULTS''',
-'and jt1.rid = jt2.rid'))
-,p_plug_source_type=>'NATIVE_JQM_REFLOW'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_attribute_01=>'STRIPE:STROKE'
-);
-wwv_flow_api.create_region_column(
- p_id=>wwv_flow_api.id(18041778209973080031)
-,p_name=>'TEAM'
-,p_data_type=>'TEAM'
-,p_is_visible=>true
-,p_display_sequence=>10
-,p_heading=>'Team'
-,p_heading_alignment=>'CENTER'
-,p_value_alignment=>'LEFT'
-,p_attribute_01=>'PLAIN'
-,p_escape_on_http_output=>true
-);
-wwv_flow_api.create_region_column(
- p_id=>wwv_flow_api.id(18041778351636080032)
-,p_name=>'World Cups Won'
-,p_data_type=>'World Cups Won'
-,p_is_visible=>true
-,p_display_sequence=>20
-,p_heading=>'World cups won'
-,p_heading_alignment=>'CENTER'
-,p_value_alignment=>'RIGHT'
-,p_attribute_01=>'PLAIN'
-,p_escape_on_http_output=>true
-);
-wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(18041777006309080019)
 ,p_plug_name=>'New'
 ,p_region_template_options=>'#DEFAULT#'
@@ -2220,6 +2113,202 @@ wwv_flow_api.create_page_plug(
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(18147602629414202626)
+,p_plug_name=>'Teams'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(15203951031811300639)
+,p_plug_display_sequence=>50
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select distinct',
+'jt1.loc loc,',
+'jt2.won won',
+'from apex_collections t,',
+'json_table(t.clob001, ''$.loc[*]'' COLUMNS rid for ordinality, loc VARCHAR2(300) path ''$'') jt1,',
+'json_table(t.clob001, ''$.won[*]'' COLUMNS rid for ordinality, won NUMBER path ''$'') jt2',
+'where t.collection_name = ''P1_RESULTS''',
+'and jt1.rid = jt2.rid',
+'order by 1'))
+,p_plug_source_type=>'NATIVE_JQM_REFLOW'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_display_condition_type=>'EXISTS'
+,p_plug_display_when_condition=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select distinct',
+'jt1.loc loc,',
+'jt2.won won',
+'from apex_collections t,',
+'json_table(t.clob001, ''$.loc[*]'' COLUMNS rid for ordinality, loc VARCHAR2(300) path ''$'') jt1,',
+'json_table(t.clob001, ''$.won[*]'' COLUMNS rid for ordinality, won NUMBER path ''$'') jt2',
+'where t.collection_name = ''P1_RESULTS''',
+'and jt1.rid = jt2.rid'))
+,p_attribute_01=>'STRIPE:STROKE'
+);
+wwv_flow_api.create_region_column(
+ p_id=>wwv_flow_api.id(18147602945221202629)
+,p_name=>'LOC'
+,p_data_type=>'LOC'
+,p_is_visible=>true
+,p_display_sequence=>10
+,p_heading=>'Loc'
+,p_heading_alignment=>'CENTER'
+,p_value_alignment=>'LEFT'
+,p_attribute_01=>'PLAIN'
+,p_escape_on_http_output=>true
+);
+wwv_flow_api.create_region_column(
+ p_id=>wwv_flow_api.id(18147603020648202630)
+,p_name=>'WON'
+,p_data_type=>'WON'
+,p_is_visible=>true
+,p_display_sequence=>20
+,p_heading=>'Won'
+,p_heading_alignment=>'CENTER'
+,p_value_alignment=>'RIGHT'
+,p_attribute_01=>'PLAIN'
+,p_escape_on_http_output=>true
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(18176463786924777404)
+,p_plug_name=>'New'
+,p_parent_plug_id=>wwv_flow_api.id(18147602629414202626)
+,p_region_template_options=>'#DEFAULT#'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(15203951031811300639)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'N'
+,p_plug_new_grid=>true
+,p_plug_display_point=>'BODY'
+,p_plug_source_type=>'NATIVE_FLASH_CHART5'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_display_condition_type=>'NEVER'
+);
+wwv_flow_api.create_flash_chart5(
+ p_id=>wwv_flow_api.id(18176463858895777405)
+,p_default_chart_type=>'3DColumn'
+,p_chart_title=>'New'
+,p_chart_rendering=>'SVG_ONLY'
+,p_display_attr=>':H:N:V:X::N::::Default:N::N:N:N:Default:N::S:'
+,p_dial_tick_attr=>':::::::::::'
+,p_gantt_attr=>':::::::::::::::::::'
+,p_pie_attr=>':::'
+,p_map_attr=>'::::::::::'
+,p_margins=>':::'
+, p_omit_label_interval=> null
+,p_bgtype=>'Trans'
+,p_color_scheme=>'6'
+,p_x_axis_label_font=>'Tahoma:10:#000000'
+,p_y_axis_label_font=>'Tahoma:10:#000000'
+,p_async_update=>'N'
+, p_names_font=> null
+, p_names_rotation=> null
+,p_values_font=>'Tahoma:10:#000000'
+,p_hints_font=>'Tahoma:10:#000000'
+,p_legend_font=>'::'
+,p_chart_title_font=>'Tahoma:14:#000000'
+,p_x_axis_title_font=>'::'
+,p_y_axis_title_font=>'::'
+,p_gauge_labels_font=>'::'
+,p_use_chart_xml=>'N'
+);
+wwv_flow_api.create_flash_chart5_series(
+ p_id=>wwv_flow_api.id(18176463950899777406)
+,p_chart_id=>wwv_flow_api.id(18176463858895777405)
+,p_series_seq=>10
+,p_series_name=>'New'
+,p_series_query=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select distinct',
+'null link,',
+'jt1.loc label,',
+'jt2.won value',
+'from apex_collections t,',
+'json_table(t.clob001, ''$.loc[*]'' COLUMNS rid for ordinality, loc VARCHAR2(300) path ''$'') jt1,',
+'json_table(t.clob001, ''$.won[*]'' COLUMNS rid for ordinality, won NUMBER path ''$'') jt2',
+'where t.collection_name = ''P1_RESULTS''',
+'and jt1.rid = jt2.rid',
+'order by 2'))
+,p_series_type=>'Bar'
+,p_series_query_type=>'SQL_QUERY'
+,p_series_query_parse_opt=>'PARSE_CHART_QUERY'
+,p_series_query_row_count_max=>300
+,p_show_action_link=>'N'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(18147603162943202631)
+,p_plug_name=>'Players'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(15203951031811300639)
+,p_plug_display_sequence=>60
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select distinct',
+'jt1.name name,',
+'jt2.position position,',
+'jt3.loc loc',
+'',
+'from apex_collections t,',
+'json_table(t.clob001, ''$.name[*]'' COLUMNS rid for ordinality, name VARCHAR2(300) path ''$'') jt1,',
+'json_table(t.clob001, ''$.position[*]'' COLUMNS rid for ordinality, position VARCHAR2(300) path ''$'') jt2,',
+'json_table(t.clob001, ''$.loc[*]'' COLUMNS rid for ordinality, loc VARCHAR2(300) path ''$'') jt3',
+'where t.collection_name = ''P1_RESULTS''',
+'and jt1.rid = jt2.rid and jt1.rid = jt3.rid',
+'order by 3,2,1',
+''))
+,p_plug_source_type=>'NATIVE_JQM_REFLOW'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_display_condition_type=>'EXISTS'
+,p_plug_display_when_condition=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'select distinct',
+'jt1.name name,',
+'jt2.position position,',
+'jt3.loc loc',
+'',
+'from apex_collections t,',
+'json_table(t.clob001, ''$.name[*]'' COLUMNS rid for ordinality, name VARCHAR2(300) path ''$'') jt1,',
+'json_table(t.clob001, ''$.position[*]'' COLUMNS rid for ordinality, position VARCHAR2(300) path ''$'') jt2,',
+'json_table(t.clob001, ''$.loc[*]'' COLUMNS rid for ordinality, loc VARCHAR2(300) path ''$'') jt3',
+'where t.collection_name = ''P1_RESULTS''',
+'and jt1.rid = jt2.rid and jt1.rid = jt3.rid'))
+,p_attribute_01=>'STRIPE:STROKE'
+);
+wwv_flow_api.create_region_column(
+ p_id=>wwv_flow_api.id(18176464940403777416)
+,p_name=>'NAME'
+,p_data_type=>'NAME'
+,p_is_visible=>true
+,p_display_sequence=>10
+,p_heading=>'Name'
+,p_heading_alignment=>'CENTER'
+,p_value_alignment=>'LEFT'
+,p_attribute_01=>'PLAIN'
+,p_escape_on_http_output=>true
+);
+wwv_flow_api.create_region_column(
+ p_id=>wwv_flow_api.id(18176465006674777417)
+,p_name=>'POSITION'
+,p_data_type=>'POSITION'
+,p_is_visible=>true
+,p_display_sequence=>20
+,p_heading=>'Position'
+,p_heading_alignment=>'CENTER'
+,p_value_alignment=>'LEFT'
+,p_attribute_01=>'PLAIN'
+,p_escape_on_http_output=>true
+);
+wwv_flow_api.create_region_column(
+ p_id=>wwv_flow_api.id(18176465127805777418)
+,p_name=>'LOC'
+,p_data_type=>'LOC'
+,p_is_visible=>true
+,p_display_sequence=>30
+,p_heading=>'Loc'
+,p_heading_alignment=>'CENTER'
+,p_value_alignment=>'LEFT'
+,p_attribute_01=>'PLAIN'
+,p_escape_on_http_output=>true
 );
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(18008502010874504384)
@@ -2328,7 +2417,10 @@ wwv_flow_api.create_page_item(
 ,p_name=>'P1_RETURNFOR'
 ,p_item_sequence=>7
 ,p_item_plug_id=>wwv_flow_api.id(18008501781806504380)
-,p_item_default=>'Neo4j_JSON'
+,p_use_cache_before_default=>'NO'
+,p_item_default=>'SQL_JSON'
+,p_source=>'SQL_JSON'
+,p_source_type=>'STATIC'
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_attribute_01=>'Y'
 );
@@ -2337,7 +2429,7 @@ wwv_flow_api.create_page_item(
 ,p_name=>'P1_QUERY'
 ,p_item_sequence=>8
 ,p_item_plug_id=>wwv_flow_api.id(18008501781806504380)
-,p_item_default=>'"MATCH (a:player) RETURN a"'
+,p_item_default=>'"select * from player"'
 ,p_prompt=>'Query'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
@@ -2357,7 +2449,7 @@ wwv_flow_api.create_page_item(
 ,p_use_cache_before_default=>'NO'
 ,p_prompt=>'Players by Team'
 ,p_display_as=>'NATIVE_SELECT_LIST'
-,p_lov=>'STATIC: Australia; Australia, Brazil; Brazil, England; England, Bulgaria; Bulgaria, Japan; Japan'
+,p_lov=>'STATIC: Australia; 1, Brazil; 2, England; 3, Bulgaria; 4, Japan; 5'
 ,p_lov_display_null=>'YES'
 ,p_cHeight=>1
 ,p_field_template=>wwv_flow_api.id(15203952069119300641)
@@ -2368,7 +2460,7 @@ wwv_flow_api.create_page_item(
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(18041776265819080011)
-,p_name=>'New'
+,p_name=>'Team Button'
 ,p_event_sequence=>10
 ,p_triggering_element_type=>'BUTTON'
 ,p_triggering_button_id=>wwv_flow_api.id(18041775298358080001)
@@ -2385,7 +2477,7 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_elements_type=>'ITEM'
 ,p_affected_elements=>'P1_QUERY'
 ,p_attribute_01=>'STATIC_ASSIGNMENT'
-,p_attribute_02=>'"MATCH (b:team) RETURN b"'
+,p_attribute_02=>'"select * from team t"'
 ,p_attribute_09=>'N'
 ,p_stop_execution_on_error=>'Y'
 ,p_wait_for_result=>'Y'
@@ -2394,14 +2486,14 @@ wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(18041776467829080013)
 ,p_event_id=>wwv_flow_api.id(18041776265819080011)
 ,p_event_result=>'TRUE'
-,p_action_sequence=>30
+,p_action_sequence=>40
 ,p_execute_on_page_init=>'N'
 ,p_action=>'NATIVE_SUBMIT_PAGE'
 ,p_attribute_02=>'Y'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(18041776624025080015)
-,p_name=>'New_1'
+,p_name=>'Player Button'
 ,p_event_sequence=>20
 ,p_triggering_element_type=>'BUTTON'
 ,p_triggering_button_id=>wwv_flow_api.id(18041776545663080014)
@@ -2418,7 +2510,7 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_elements_type=>'ITEM'
 ,p_affected_elements=>'P1_QUERY'
 ,p_attribute_01=>'STATIC_ASSIGNMENT'
-,p_attribute_02=>'"MATCH(a:player)<-[:player]-(b:team) RETURN a.name, a.position, b.loc"'
+,p_attribute_02=>'"select t.loc, p.name, p.position from player p, team t where p.team_id = t.team_id"'
 ,p_attribute_09=>'N'
 ,p_stop_execution_on_error=>'Y'
 ,p_wait_for_result=>'Y'
@@ -2427,7 +2519,7 @@ wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(18041776892965080017)
 ,p_event_id=>wwv_flow_api.id(18041776624025080015)
 ,p_event_result=>'TRUE'
-,p_action_sequence=>40
+,p_action_sequence=>60
 ,p_execute_on_page_init=>'N'
 ,p_action=>'NATIVE_SUBMIT_PAGE'
 ,p_attribute_02=>'Y'
@@ -2451,9 +2543,7 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_elements_type=>'ITEM'
 ,p_affected_elements=>'P1_QUERY'
 ,p_attribute_01=>'FUNCTION_BODY'
-,p_attribute_06=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'RETURN ''"MATCH(a:player)<-[:player]-(b:team) WHERE b.loc = ''''''||:P1_LOC||'''''' RETURN a.name, a.position, b.loc"'';',
-''))
+,p_attribute_06=>'RETURN ''"select t.loc, p.name, p.position from player p, team t where team_id = ''||:P1_LOC||'' and p.team_id = t.team_id"'';'
 ,p_attribute_07=>'P1_LOC'
 ,p_attribute_08=>'N'
 ,p_attribute_09=>'N'
@@ -2464,7 +2554,7 @@ wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(18041779761058080046)
 ,p_event_id=>wwv_flow_api.id(18041779500845080044)
 ,p_event_result=>'TRUE'
-,p_action_sequence=>30
+,p_action_sequence=>20
 ,p_execute_on_page_init=>'N'
 ,p_action=>'NATIVE_SUBMIT_PAGE'
 ,p_attribute_02=>'Y'
@@ -2479,6 +2569,17 @@ wwv_flow_api.create_page_process(
 ,p_attribute_01=>wwv_flow_api.id(15204482793129174766)
 ,p_attribute_02=>'COLLECTION'
 ,p_attribute_03=>'P1_DOREST_RESULTS'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(18176465265750777419)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_BOX_BODY'
+,p_process_type=>'NATIVE_WEB_SERVICE'
+,p_process_name=>'New'
+,p_attribute_01=>wwv_flow_api.id(15204482793129174766)
+,p_attribute_02=>'COLLECTION'
+,p_attribute_03=>'P1_RESULTS'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
 end;
@@ -2514,6 +2615,13 @@ wwv_flow_api.create_ws_process_parms_map(
 ,p_map_type=>'ITEM'
 ,p_parm_value=>'P1_QUERY'
 );
+wwv_flow_api.create_ws_process_parms_map(
+ p_id=>wwv_flow_api.id(18176465361090777420)
+,p_parameter_id=>wwv_flow_api.id(15204483082555174767)
+,p_process_id=>wwv_flow_api.id(18176465265750777419)
+,p_map_type=>'ITEM'
+,p_parm_value=>'P1_QUERY'
+);
 wwv_flow_api.create_ws_parameters(
  p_id=>wwv_flow_api.id(15204483302806174767)
 ,p_ws_opers_id=>wwv_flow_api.id(15204482793129174766)
@@ -2536,6 +2644,13 @@ wwv_flow_api.create_ws_process_parms_map(
 ,p_map_type=>'ITEM'
 ,p_parm_value=>'P1_DB'
 );
+wwv_flow_api.create_ws_process_parms_map(
+ p_id=>wwv_flow_api.id(18176465420176777421)
+,p_parameter_id=>wwv_flow_api.id(15204741067177356887)
+,p_process_id=>wwv_flow_api.id(18176465265750777419)
+,p_map_type=>'ITEM'
+,p_parm_value=>'P1_DB'
+);
 wwv_flow_api.create_ws_parameters(
  p_id=>wwv_flow_api.id(15204741378891356887)
 ,p_ws_opers_id=>wwv_flow_api.id(15204482793129174766)
@@ -2547,6 +2662,13 @@ wwv_flow_api.create_ws_process_parms_map(
  p_id=>wwv_flow_api.id(18008504456961504394)
 ,p_parameter_id=>wwv_flow_api.id(15204741378891356887)
 ,p_process_id=>wwv_flow_api.id(18008502894486504386)
+,p_map_type=>'ITEM'
+,p_parm_value=>'P1_USER'
+);
+wwv_flow_api.create_ws_process_parms_map(
+ p_id=>wwv_flow_api.id(18176466065251777427)
+,p_parameter_id=>wwv_flow_api.id(15204741378891356887)
+,p_process_id=>wwv_flow_api.id(18176465265750777419)
 ,p_map_type=>'ITEM'
 ,p_parm_value=>'P1_USER'
 );
@@ -2564,6 +2686,13 @@ wwv_flow_api.create_ws_process_parms_map(
 ,p_map_type=>'ITEM'
 ,p_parm_value=>'P1_PASS'
 );
+wwv_flow_api.create_ws_process_parms_map(
+ p_id=>wwv_flow_api.id(18176465713811777424)
+,p_parameter_id=>wwv_flow_api.id(15204741636037356887)
+,p_process_id=>wwv_flow_api.id(18176465265750777419)
+,p_map_type=>'ITEM'
+,p_parm_value=>'P1_PASS'
+);
 wwv_flow_api.create_ws_parameters(
  p_id=>wwv_flow_api.id(15204741974841356887)
 ,p_ws_opers_id=>wwv_flow_api.id(15204482793129174766)
@@ -2575,6 +2704,13 @@ wwv_flow_api.create_ws_process_parms_map(
  p_id=>wwv_flow_api.id(18008506010985504395)
 ,p_parameter_id=>wwv_flow_api.id(15204741974841356887)
 ,p_process_id=>wwv_flow_api.id(18008502894486504386)
+,p_map_type=>'ITEM'
+,p_parm_value=>'P1_MODE'
+);
+wwv_flow_api.create_ws_process_parms_map(
+ p_id=>wwv_flow_api.id(18176465562768777422)
+,p_parameter_id=>wwv_flow_api.id(15204741974841356887)
+,p_process_id=>wwv_flow_api.id(18176465265750777419)
 ,p_map_type=>'ITEM'
 ,p_parm_value=>'P1_MODE'
 );
@@ -2592,6 +2728,13 @@ wwv_flow_api.create_ws_process_parms_map(
 ,p_map_type=>'ITEM'
 ,p_parm_value=>'P1_MODEL'
 );
+wwv_flow_api.create_ws_process_parms_map(
+ p_id=>wwv_flow_api.id(18176465640932777423)
+,p_parameter_id=>wwv_flow_api.id(15204742273712356888)
+,p_process_id=>wwv_flow_api.id(18176465265750777419)
+,p_map_type=>'ITEM'
+,p_parm_value=>'P1_MODEL'
+);
 wwv_flow_api.create_ws_parameters(
  p_id=>wwv_flow_api.id(15204742599673356888)
 ,p_ws_opers_id=>wwv_flow_api.id(15204482793129174766)
@@ -2606,6 +2749,13 @@ wwv_flow_api.create_ws_process_parms_map(
 ,p_map_type=>'ITEM'
 ,p_parm_value=>'P1_RETURNDIMENSIONS'
 );
+wwv_flow_api.create_ws_process_parms_map(
+ p_id=>wwv_flow_api.id(18176465826692777425)
+,p_parameter_id=>wwv_flow_api.id(15204742599673356888)
+,p_process_id=>wwv_flow_api.id(18176465265750777419)
+,p_map_type=>'ITEM'
+,p_parm_value=>'P1_RETURNDIMENSIONS'
+);
 wwv_flow_api.create_ws_parameters(
  p_id=>wwv_flow_api.id(15204742829732356888)
 ,p_ws_opers_id=>wwv_flow_api.id(15204482793129174766)
@@ -2617,6 +2767,13 @@ wwv_flow_api.create_ws_process_parms_map(
  p_id=>wwv_flow_api.id(18008508482798504397)
 ,p_parameter_id=>wwv_flow_api.id(15204742829732356888)
 ,p_process_id=>wwv_flow_api.id(18008502894486504386)
+,p_map_type=>'ITEM'
+,p_parm_value=>'P1_RETURNFOR'
+);
+wwv_flow_api.create_ws_process_parms_map(
+ p_id=>wwv_flow_api.id(18176465911258777426)
+,p_parameter_id=>wwv_flow_api.id(15204742829732356888)
+,p_process_id=>wwv_flow_api.id(18176465265750777419)
 ,p_map_type=>'ITEM'
 ,p_parm_value=>'P1_RETURNFOR'
 );

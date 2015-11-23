@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3D104F67-448F-98B2-06C0-182836D9860E" name="team">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:54:43 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="team_id" id="B31B537C-2994-44A7-FDAF-58F9C300E4EC">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:54:48 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="loc" id="D334DB6B-00A2-6FE1-88CE-9A18FA91FD6E">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:54:55 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="won" id="30B6D690-A935-F0CF-4E8C-28C0E187BC1E">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:55:01 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4D2C3AFC-548D-CDCB-4A9A-B4FF2E5CC740" name="team PK">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:54:52 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B31B537C-2994-44A7-FDAF-58F9C300E4EC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

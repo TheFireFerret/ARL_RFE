@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C2985722-3D7F-53F2-E5E3-4439324D0DBE" name="Player">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:53:58 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="p_id" id="75D7B21C-4F47-4644-1C7D-6C35A5DED91D">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:54:06 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="BBD3FF76-3915-6318-863E-42336EF9B86F">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:54:14 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="position" id="E52330FF-6F14-4A8A-B203-3F419CC02245">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:54:27 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="team_id" id="8537D80F-5C11-62CB-1851-B48F2DC3F3AC">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:55:11 UTC</createdTime>
+<generatorID>7C38A990-55BA-17BE-7416-7C0AAFC3DEDB</generatorID>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<engineerTo>
+<item key="72582F42-F493-FF79-2EF6-E562E3F178FB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>B31B537C-2994-44A7-FDAF-58F9C300E4EC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

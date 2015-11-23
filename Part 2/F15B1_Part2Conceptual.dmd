@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="F15B1_Part2Conceptual" id="524B024C-3733-6068-294A-DC4631C31FCF" version="3.5">
+<createdBy>SeaLion</createdBy>
+<createdTime>2015-11-23 21:53:47 UTC</createdTime>
+<ownerDesignName>F15B1_Part2Conceptual</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>524B024C-3733-6068-294A-DC4631C31FCF</designId>
+</OSDM_Design>

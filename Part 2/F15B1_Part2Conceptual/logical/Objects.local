@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="C2985722-3D7F-53F2-E5E3-4439324D0DBE" name="Player" seqName="seg_0"/>
+   <object objectType="Entity" objectID="3D104F67-448F-98B2-06C0-182836D9860E" name="team" seqName="seg_0"/>
+   <object objectType="Relation" objectID="7C38A990-55BA-17BE-7416-7C0AAFC3DEDB" name="Relation_1" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>
